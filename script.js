@@ -70,8 +70,8 @@ function showQuestion() {
 
 function answer(solution) {
     if (solution == questions[currentQuestion].right_answer) {
-        console.log('Richtig!');
+        document.getElementById(`ans_${solution}`).parentElement.classList.add('bg-success')
     } else {
-        console.log('Falsch!');
+        document.getElementById(`ans_${solution}`).parentElement.classList.add('bg-danger')
     }
 }
