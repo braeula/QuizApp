@@ -1,4 +1,12 @@
 body {
-    min-height: 100vh;
-    background-color: rgba(0, 0, 165, 0.774) !important;
+    background-color: rgba(0, 0, 165) !important;
 }
+
+.container {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 165) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
