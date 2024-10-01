@@ -51,6 +51,8 @@ let questions = [
 
 let currentQuestion = 0;
 let rightAnswers = 0;
+let AUDIO_SUCCESS = new Audio('./audio/right.mp3');
+let AUDIO_FAIL = new Audio('./audio/wrong.mp3');
 
 function init() {
     document.getElementById('sum-question').innerHTML = questions.length;
@@ -83,9 +85,11 @@ function answer(solution) {
     if (solution == questions[currentQuestion].right_answer) {
         document.getElementById(`ans_${solution}`).parentElement.classList.add('bg-success');
         rightAnswers += 1;
+        AUDIO_SUCCESS.play();
     } else {
         document.getElementById(`ans_${solution}`).parentElement.classList.add('bg-danger');
         document.getElementById(`ans_${questions[currentQuestion].right_answer}`).parentElement.classList.add('bg-success');
+        AUDIO_FAIL.play();
     }
     document.getElementById('nextbutton').disabled = false;
 }
