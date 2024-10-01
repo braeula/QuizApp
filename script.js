@@ -60,6 +60,10 @@ function init() {
 }
 
 function showQuestion() {
+    let percent = Math.round((currentQuestion + 1) / questions.length * 100);
+    document.getElementById('progress-bar').innerHTML = percent + '%';
+    document.getElementById('progress-bar').style=`width: ${percent}%`
+
     if (currentQuestion >= questions.length) {
         document.getElementById('quiz-body').style = 'display:none';
         document.getElementById('endscreen').style = '';
