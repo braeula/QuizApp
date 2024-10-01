@@ -67,3 +67,11 @@ function showQuestion() {
     document.getElementById('ans_4').innerText = question.answer_4;
 
 }
+
+function answer(solution) {
+    if (solution == questions[currentQuestion].right_answer) {
+        console.log('Richtig!');
+    } else {
+        console.log('Falsch!');
+    }
+}
