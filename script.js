@@ -75,4 +75,5 @@ function answer(solution) {
         document.getElementById(`ans_${solution}`).parentElement.classList.add('bg-danger');
         document.getElementById(`ans_${questions[currentQuestion].right_answer}`).parentElement.classList.add('bg-success');
     }
+    document.getElementById('nextbutton').disabled = false;
 }
