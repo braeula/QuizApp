@@ -77,3 +77,13 @@ function answer(solution) {
     }
     document.getElementById('nextbutton').disabled = false;
 }
+
+function nextQuestion() {
+    currentQuestion += 1;
+    init();
+    document.getElementById('nextbutton').disabled = true;
+    document.getElementById(`ans_${questions[currentQuestion - 1].right_answer}`).parentElement.classList.remove('bg-success');
+    for (let i = 1; i < 5; i++) {
+        document.getElementById(`ans_${i}`).parentElement.classList.remove('bg-danger');    
+    }
+}
