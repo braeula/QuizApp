@@ -62,7 +62,7 @@ function init() {
 function showQuestion() {
     let percent = Math.round((currentQuestion + 1) / questions.length * 100);
     document.getElementById('progress-bar').innerHTML = percent + '%';
-    document.getElementById('progress-bar').style=`width: ${percent}%`
+    document.getElementById('progress-bar').style = `width: ${percent}%`
 
     if (currentQuestion >= questions.length) {
         document.getElementById('quiz-body').style = 'display:none';
@@ -98,4 +98,12 @@ function nextQuestion() {
     for (let i = 1; i < 5; i++) {
         document.getElementById(`ans_${i}`).parentElement.classList.remove('bg-danger');
     }
+}
+
+function restartGame() {
+    currentQuestion = 0;
+    rightAnswers = 0;
+    document.getElementById('quiz-body').style = '';
+    document.getElementById('endscreen').style = 'display:none';
+    init();
 }

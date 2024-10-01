@@ -12,6 +12,7 @@ body {
 
 .quiz-card {
     width: 25rem;
+    gap: 32px;
 }
 
 .question-footer {
@@ -33,4 +34,10 @@ body {
 
 .text-center {
     text-align: center;
+}
+
+.disp-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
