@@ -7,9 +7,10 @@
   <title>QuizApp</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="./script.js"></script>
 </head>
 
-<body>
+<body onload="init()">
   <!-- As a heading -->
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
@@ -21,40 +22,40 @@
     <div class="card quiz-card">
       <img src="./img/question.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Frage</h5>
+        <h5 class="card-title" id="question-text">Frage</h5>
 
 
 
         <div class="card mb-2">
-          <div class="card-body">
+          <div class="card-body" id="ans_1">
             Antwort
           </div>
         </div>
 
 
         <div class="card mb-2">
-          <div class="card-body">
+          <div class="card-body" id="ans_2">
             Antwort
           </div>
         </div>
 
 
         <div class="card mb-2">
-          <div class="card-body">
+          <div class="card-body" id="ans_3">
             Antwort
           </div>
         </div>
 
 
         <div class="card mb-2">
-          <div class="card-body">
+          <div class="card-body" id="ans_4">
             Antwort
           </div>
         </div>
 
         <div class="question-footer">
           <span>
-            <b>1</b> von <b>5</b> Fragen
+            <b id="current-question">1</b> von <b id="sum-question">5</b> Fragen
           </span>
 
           <a href="#" class="btn btn-primary">Go somewhere</a>
