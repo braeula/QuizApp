@@ -50,6 +50,7 @@ let questions = [
 ];
 
 let currentQuestion = 0;
+let rightAnswers = 0;
 
 function init() {
     document.getElementById('sum-question').innerHTML = questions.length;
@@ -59,18 +60,25 @@ function init() {
 }
 
 function showQuestion() {
-    let question = questions[currentQuestion];
-    document.getElementById('question-text').innerHTML = question.question + "?"
-    document.getElementById('ans_1').innerText = question.answer_1;
-    document.getElementById('ans_2').innerText = question.answer_2;
-    document.getElementById('ans_3').innerText = question.answer_3;
-    document.getElementById('ans_4').innerText = question.answer_4;
-
+    if (currentQuestion >= questions.length) {
+        document.getElementById('quiz-body').style = 'display:none';
+        document.getElementById('endscreen').style = '';
+        document.getElementById('right-ans').innerHTML = rightAnswers;
+        document.getElementById('sum').innerHTML = questions.length;
+    } else {
+        let question = questions[currentQuestion];
+        document.getElementById('question-text').innerHTML = question.question + "?"
+        document.getElementById('ans_1').innerText = question.answer_1;
+        document.getElementById('ans_2').innerText = question.answer_2;
+        document.getElementById('ans_3').innerText = question.answer_3;
+        document.getElementById('ans_4').innerText = question.answer_4;
+    }
 }
 
 function answer(solution) {
     if (solution == questions[currentQuestion].right_answer) {
         document.getElementById(`ans_${solution}`).parentElement.classList.add('bg-success');
+        rightAnswers += 1;
     } else {
         document.getElementById(`ans_${solution}`).parentElement.classList.add('bg-danger');
         document.getElementById(`ans_${questions[currentQuestion].right_answer}`).parentElement.classList.add('bg-success');
@@ -84,6 +92,6 @@ function nextQuestion() {
     document.getElementById('nextbutton').disabled = true;
     document.getElementById(`ans_${questions[currentQuestion - 1].right_answer}`).parentElement.classList.remove('bg-success');
     for (let i = 1; i < 5; i++) {
-        document.getElementById(`ans_${i}`).parentElement.classList.remove('bg-danger');    
+        document.getElementById(`ans_${i}`).parentElement.classList.remove('bg-danger');
     }
 }

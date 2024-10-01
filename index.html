@@ -19,7 +19,16 @@
   </nav>
 
   <div class="container">
-    <div class="card quiz-card">
+
+    <div class="card quiz-card text-center" id="endscreen" style="display: none;">
+      <img src="./img/cup.webp" class="card-img-top" alt="...">
+      QUIZ BEENDET!
+      <div class="text-center">
+        Dein Ergebnis: <b id="right-ans">X</b> von <b id="sum">X</b>.
+      </div>
+    </div>
+
+    <div class="card quiz-card" id="quiz-body" >
       <img src="./img/question.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title" id="question-text">Frage</h5>
